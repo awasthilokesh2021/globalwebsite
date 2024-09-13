@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const [User, setUser] = useState({
+    fullname: "",
+    lastname: "",
+    email: "",
+    address: "",
+  });
+
+  // value storage
+  const HandleInputBtn = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...User, [name]: value });
+  };
+
+  // submit button
+  const ButtonClick = () => {
+    alert("user successful regestration");
+    setUser({
+      fullname: "",
+      lastname: "",
+      email: "",
+      address: "",
+    });
+  };
+
   const navigate = useNavigate();
   // handle button
   const handleRedirect = () => {
@@ -31,6 +55,9 @@ const Contact = () => {
             <label className="text-lg text-gray-700">Full Name</label>
             <input
               placeholder="Enter your full name"
+              name="fullname"
+              value={User.fullname}
+              onChange={HandleInputBtn}
               className="px-4 py-2 rounded-lg bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             />
           </div>
@@ -39,6 +66,9 @@ const Contact = () => {
             <label className="text-lg text-gray-700">Last Name</label>
             <input
               placeholder="Enter your last name"
+              name="lastname"
+              value={User.lastname}
+              onChange={HandleInputBtn}
               className="px-4 py-2 rounded-lg bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             />
           </div>
@@ -47,6 +77,9 @@ const Contact = () => {
             <label className="text-lg text-gray-700">Email</label>
             <input
               placeholder="Enter your email"
+              name="email"
+              value={User.email}
+              onChange={HandleInputBtn}
               type="email"
               className="px-4 py-2 rounded-lg bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             />
@@ -56,6 +89,9 @@ const Contact = () => {
             <label className="text-lg text-gray-700">Address</label>
             <input
               placeholder="Enter your address"
+              name="address"
+              value={User.address}
+              onChange={HandleInputBtn}
               type="text"
               className="px-4 py-2 rounded-lg bg-gray-100 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             />
@@ -63,7 +99,10 @@ const Contact = () => {
 
           {/* Submit Button */}
           <div className="text-center mt-6">
-            <button className="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition duration-300">
+            <button
+              onClick={ButtonClick}
+              className="bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
+            >
               Submit
             </button>
           </div>
