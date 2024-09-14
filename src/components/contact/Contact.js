@@ -37,7 +37,7 @@ const Contact = () => {
       {/* Cross Button */}
       <button
         onClick={handleRedirect}
-        className="absolute top-4 right-4 text-white bg-red-500 p-2 rounded-full hover:bg-red-700 transition duration-300"
+        className="absolute top-2 right-2 text-white bg-red-500 p-2 rounded-full hover:bg-red-700 transition duration-300"
       >
         &#x2716;
       </button>

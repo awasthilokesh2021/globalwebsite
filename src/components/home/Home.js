@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen w-full py-8">
+    <div className="min-h-screen w-full py-8 mt-4">
       <h1 className="text-center text-4xl font-bold py-4 text-gray-800">
         Beautiful Home
       </h1>
